@@ -39,6 +39,8 @@ git clone https://github.com/kassambara/wordpress-docker-compose
 cd wordpress-docker-compose
 # Build and start installation
 docker-compose up -d --build
+# Backup mysql database
+docker exec wordpress_mysql /usr/bin/mysqldump -u root --password=password wordpress > backup.sql
 ```
 
 Visit your site at http://localhost and your database via phpMyAdmin at http://localhost:8080. 
