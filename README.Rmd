@@ -68,6 +68,8 @@ docker-compose up -d --build
 # Reset everything
 docker-compose down
 rm -rf certs/* certs-data/* logs/nginx/* mysql/* wordpress/*
+# Backup mysql database
+docker exec wordpress_mysql /usr/bin/mysqldump -u root --password=password wordpress > backup.sql
 ```
   
 
